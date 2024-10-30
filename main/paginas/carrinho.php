@@ -1,4 +1,5 @@
 <?php
+
 session_start(); // Inicia a sessão para acessar o carrinho
 
 // Verifica se o carrinho está vazio
