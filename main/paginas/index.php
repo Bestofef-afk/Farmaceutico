@@ -1,8 +1,8 @@
 <?php
-session_start(); // Inicia a sessão para acessar o carrinho
+session_start(); // Inicia a sessão
 
-// Verifica se o carrinho já foi criado na sessão
-// Se não existir, inicializa como um array vazio
+// Verifica se o carrinho já foi criado
+// Se não existir, inicia um array vazio
 if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = [];
 }
@@ -15,10 +15,10 @@ if (!isset($_SESSION['carrinho'])) {
     <title>Loja Online</title>
 </head>
 <body>
-    <h1>Bem-vindo à Loja Online</h1>
+    <h1>Bem-vindo à Diamond Drugs Farmaceuticos!!</h1>
     <h2>Produtos</h2>
     <ul>
-        <!-- Exibe cada produto disponível -->
+        <!-- Exibe cada produto disponivel -->
         <li>
             Produto 1 - R$10.00
             <form action="produtos.php" method="post">
