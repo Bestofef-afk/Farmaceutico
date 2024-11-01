@@ -1,73 +1,62 @@
 <?php
+session_start();
+$total = 0;
 
-session_start(); // Inicia a sessão para acessar o carrinho
-
-// Verifica se o carrinho está vazio
-$carrinhoVazio = empty($_SESSION['carrinho']);
-
-// Verifica se o método de requisição é POST e se foi solicitado remover um item
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['remover'])) {
-        $indexRemover = $_POST['remover']; // Pega o índice do item a ser removido
-        if (isset($_SESSION['carrinho'][$indexRemover])) {
-            unset($_SESSION['carrinho'][$indexRemover]); // Remove o item do carrinho
-            $_SESSION['carrinho'] = array_values($_SESSION['carrinho']); // Reindexa o array para evitar buracos
-        }
-    }
-
-    // Verifica se foi solicitado finalizar a compra
-    if (isset($_POST['finalizar'])) {
-        // Aqui você pode adicionar a lógica para processar o pagamento ou salvar os dados da compra
-        // Após isso, esvazia o carrinho
-        unset($_SESSION['carrinho']);
-        header('Location: sucesso.php'); // Redireciona para uma página de sucesso
-        exit();
-    }
+// Remove produto do carrinho
+if (isset($_POST['remove'])) {
+    $index = $_POST['index'];
+    unset($_SESSION['cart'][$index]);
+    $_SESSION['cart'] = array_values($_SESSION['cart']); // Reindexa o array
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Carrinho de Compras</h1>
-    
-    <?php if ($carrinhoVazio): ?>
-        <p>Seu carrinho está vazio.</p> <!-- Mensagem caso o carrinho não tenha itens -->
-    <?php else: ?>
-        <ul>
-            <!-- Lista os itens do carrinho -->
-            <?php foreach ($_SESSION['carrinho'] as $index => $item): ?>
-                <li>
-                    <?php echo htmlspecialchars($item['produto']); ?> - R$<?php echo htmlspecialchars($item['preco']); ?>
-                    <!-- Formulário para remover o item -->
-                    <form action="carrinho.php" method="post" style="display:inline;">
-                        <input type="hidden" name="remover" value="<?php echo $index; ?>"> <!-- O índice do item a ser removido -->
-                        <input type="submit" value="Remover"> <!-- Botão para remover o item -->
-                    </form>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        <p>
-            Total: R$ 
-            <?php
-            // Calcula o total do carrinho somando os preços dos produtos
-            $total = array_sum(array_column($_SESSION['carrinho'], 'preco'));
-            echo number_format($total, 2, ',', ''); // Formata o total para duas casas decimais
-            ?>
-        </p>
-        
-        <!-- Formulário para finalizar a compra -->
-        <form action="carrinho.php" method="post">
-            <input type="submit" name="finalizar" value="Finalizar Compra">
-        </form>
-    <?php endif; ?>
-    
-    <a href="index.php">Voltar para a loja</a> <!-- Link para voltar à página inicial -->
+
+    <header>
+        <h1>Carrinho de Compras</h1>
+        <a href="index.php">Continuar Comprando</a>
+    </header>
+
+    <div class="container">
+        <div class="cart">
+            <h2>Produtos no Carrinho</h2>
+            <div id="cart-items">
+                <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+                    <?php foreach ($_SESSION['cart'] as $index => $item): ?>
+                        <div class="cart-item">
+                            <span class="item-name"><?php echo $item['name']; ?></span>
+                            <span class="item-price">R$ <?php echo number_format($item['price'], 2, ',', '.'); ?></span>
+                            <form method="POST" style="display:inline;">
+                                <input type="hidden" name="index" value="<?php echo $index; ?>">
+                                <button type="submit" name="remove" class="btn-remove">Remover</button>
+                            </form>
+                        </div>
+                        <?php $total += $item['price']; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Seu carrinho está vazio.</p>
+                <?php endif; ?>
+            </div>
+            <div class="cart-total">
+                Total: R$ <?php echo number_format($total, 2, ',', '.'); ?>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Farmácia Online</p>
+    </footer>
+
 </body>
+
 </html>
-
-

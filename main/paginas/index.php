@@ -1,43 +1,80 @@
 <?php
-session_start(); // Inicia a sessão
+session_start();
 
-// Verifica se o carrinho já foi criado
-// Se não existir, inicia um array vazio
-if (!isset($_SESSION['carrinho'])) {
-    $_SESSION['carrinho'] = [];
+// Adiciona produto ao carrinho
+if (isset($_POST['add_to_cart'])) {
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+
+    // Se não existir um carrinho, cria um
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = [];
+    }
+
+    // Adiciona o produto ao carrinho
+    $_SESSION['cart'][] = [
+        'name' => $product_name,
+        'price' => $product_price
+    ];
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <title>Loja Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia Online</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Bem-vindo à Diamond Drugs Farmaceuticos!!</h1>
-    <h2>Produtos</h2>
-    <ul>
-        <!-- Exibe cada produto disponivel -->
-        <li>
-            Produto 1 - R$10.00
-            <form action="produtos.php" method="post">
-                <!-- Campos ocultos para enviar o nome e o preço do produto -->
-                <input type="hidden" name="produto" value="Produto 1">
-                <input type="hidden" name="preco" value="10.00">
-                <input type="submit" value="Adicionar ao Carrinho"> <!-- Botão para adicionar ao carrinho -->
-            </form>
-        </li>
-        <li>
-            Produto 2 - R$20.00
-            <form action="produtos.php" method="post">
-                <input type="hidden" name="produto" value="Produto 2">
-                <input type="hidden" name="preco" value="20.00">
-                <input type="submit" value="Adicionar ao Carrinho">
-            </form>
-        </li>
-    </ul>
-    <a href="carrinho.php">Ver Carrinho</a> <!-- Link para visualizar o carrinho -->
-</body>
-</html>
 
+<body>
+
+    <header>
+        <h1>Farmácia Online</h1>
+        <a href="carrinho.php">Ver Carrinho</a>
+    </header>
+
+    <div class="container">
+        <div class="product-grid">
+            <div class="card">
+                <img src="produto1.jpg" alt="Produto 1">
+                <h2>Produto 1</h2>
+                <p class="price">R$ 29,90</p>
+                <form method="POST">
+                    <input type="hidden" name="product_name" value="Produto 1">
+                    <input type="hidden" name="product_price" value="29.90">
+                    <button type="submit" name="add_to_cart" class="btn-cart">Adicionar ao Carrinho</button>
+                </form>
+            </div>
+            <div class="card">
+                <img src="produto2.jpg" alt="Produto 2">
+                <h2>Produto 2</h2>
+                <p class="price">R$ 19,90</p>
+                <form method="POST">
+                    <input type="hidden" name="product_name" value="Produto 2">
+                    <input type="hidden" name="product_price" value="19.90">
+                    <button type="submit" name="add_to_cart" class="btn-cart">Adicionar ao Carrinho</button>
+                </form>
+            </div>
+            <div class="card">
+                <img src="produto3.jpg" alt="Produto 3">
+                <h2>Produto 3</h2>
+                <p class="price">R$ 39,90</p>
+                <form method="POST">
+                    <input type="hidden" name="product_name" value="Produto 3">
+                    <input type="hidden" name="product_price" value="39.90">
+                    <button type="submit" name="add_to_cart" class="btn-cart">Adicionar ao Carrinho</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Farmácia Online</p>
+    </footer>
+
+</body>
+
+</html>
