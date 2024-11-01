@@ -70,7 +70,7 @@ if (isset($_POST['add_to_cart'])) {
             </div>
         </div>
     </div>
-
+<script src="script.js"></script>
     <footer>
         <p>&copy; 2024 Farmácia Online</p>
     </footer>
