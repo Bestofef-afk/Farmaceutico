@@ -6,11 +6,22 @@ session_start(); // Inicia a sessão para acessar o carrinho
 $carrinhoVazio = empty($_SESSION['carrinho']);
 
 // Verifica se o método de requisição é POST e se foi solicitado remover um item
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remover'])) {
-    $indexRemover = $_POST['remover']; // Pega o índice do item a ser removido
-    if (isset($_SESSION['carrinho'][$indexRemover])) {
-        unset($_SESSION['carrinho'][$indexRemover]); // Remove o item do carrinho
-        $_SESSION['carrinho'] = array_values($_SESSION['carrinho']); // Reindexa o array para evitar buracos
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['remover'])) {
+        $indexRemover = $_POST['remover']; // Pega o índice do item a ser removido
+        if (isset($_SESSION['carrinho'][$indexRemover])) {
+            unset($_SESSION['carrinho'][$indexRemover]); // Remove o item do carrinho
+            $_SESSION['carrinho'] = array_values($_SESSION['carrinho']); // Reindexa o array para evitar buracos
+        }
+    }
+
+    // Verifica se foi solicitado finalizar a compra
+    if (isset($_POST['finalizar'])) {
+        // Aqui você pode adicionar a lógica para processar o pagamento ou salvar os dados da compra
+        // Após isso, esvazia o carrinho
+        unset($_SESSION['carrinho']);
+        header('Location: sucesso.php'); // Redireciona para uma página de sucesso
+        exit();
     }
 }
 ?>
@@ -48,9 +59,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remover'])) {
             echo number_format($total, 2, ',', ''); // Formata o total para duas casas decimais
             ?>
         </p>
+        
+        <!-- Formulário para finalizar a compra -->
+        <form action="carrinho.php" method="post">
+            <input type="submit" name="finalizar" value="Finalizar Compra">
+        </form>
     <?php endif; ?>
     
     <a href="index.php">Voltar para a loja</a> <!-- Link para voltar à página inicial -->
 </body>
 </html>
+
 
