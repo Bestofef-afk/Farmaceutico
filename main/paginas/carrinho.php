@@ -50,6 +50,13 @@ if (isset($_POST['remove'])) {
             <div class="cart-total">
                 Total: R$ <?php echo number_format($total, 2, ',', '.'); ?>
             </div>
+
+            <!-- Botão de Comprar -->
+            <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+                <div class="cart-actions">
+                    <a href="sucesso.php" class="btn-buy">Comprar</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 

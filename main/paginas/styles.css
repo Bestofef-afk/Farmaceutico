@@ -86,7 +86,7 @@ footer {
     justify-content: space-between;
 }
 
-/* Estilo do carrinho */
+/* Estilo do carrinho.php */
 .cart {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -140,4 +140,28 @@ footer {
 
 .btn-remove:hover {
     background-color: #c82333; /* Vermelho escuro */
+}
+
+
+/* Estilo para o botão Comprar */
+.btn-buy {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: #45a049; /* Tom mais escuro de verde */
+}
+
+.cart-actions {
+    text-align: right;
 }
