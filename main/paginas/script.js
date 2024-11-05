@@ -10,3 +10,16 @@ document.addEventListener('keypress', (event) => {
         typedInput = ''; // Reset if more than 5 characters
     }
 });
+
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+
+    // Calcula o próximo índice
+    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+
+    // Move o carrossel
+    document.querySelector('.carousel-inner').style.transform = `translateX(-${currentIndex * 33.33}%)`;
+}
