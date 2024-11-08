@@ -48,28 +48,7 @@ body {
     font-weight: bold;
 }
 
-/* Botão de adicionar ao carrinho */
-.btn-cart {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-.btn-cart:hover {
-    background-color: #0056b3;
-}
-
-/* Estilo do cabeçalho */
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
 
 /* Estilo do rodapé */
 footer {
@@ -167,72 +146,3 @@ footer {
 }
 
 
-/* Estilos do Carrossel */
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-}
-
-.carousel-item h2 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.carousel-item .price {
-    font-size: 20px;
-    color: #333;
-}
-
-.carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Estilos do botão do carrinho */
-.btn-cart {
-    padding: 10px 20px;
-    background-color: #28a745;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.btn-cart:hover {
-    background-color: #218838;
-}

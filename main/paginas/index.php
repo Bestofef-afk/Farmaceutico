@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("navbar.php");
 
 // Adiciona produto ao carrinho
 if (isset($_POST['add_to_cart'])) {
@@ -28,14 +29,12 @@ if (isset($_POST['add_to_cart'])) {
     <title>Farmácia Online</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="index.css">
+    
 </head>
 
 <body>
 
-    <header>
-        <h1>Farmácia Online</h1>
-        <a href="carrinho.php">Ver Carrinho</a>
-    </header>
+   
 
     <!-- Carrossel de Promoções -->
     <div class="carousel">
@@ -58,6 +57,7 @@ if (isset($_POST['add_to_cart'])) {
     <div class="product-grid">
         <?php 
         $products = [
+        
             ['name' => 'Produto 1', 'price' => '29.90', 'image' => '../imagens/produtos/aguaoxigenada.webp'],
             ['name' => 'Produto 2', 'price' => '19.90', 'image' => '../imagens/produtos/alcoolSpray.webp'],
             ['name' => 'Produto 3', 'price' => '39.90', 'image' => '../imagens/produtos/amoxicilina.webp'] ,
@@ -119,7 +119,6 @@ if (isset($_POST['add_to_cart'])) {
             ['name'=> 'Produto 59', 'price'=> '39.90', 'image'=> '../imagens/produtos/tylenol.webp'],
             ['name'=> 'Produto 60', 'price'=> '39.90', 'image'=> '../imagens/produtos/valsartana.webp'],
             ['name'=> 'Produto 61', 'price'=> '39.90', 'image'=> '../imagens/produtos/vitaminaD.webp'],
-            
         ];
 
         foreach ($products as $product) {

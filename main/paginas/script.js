@@ -15,11 +15,16 @@ let currentIndex = 0;
 
 function moveSlide(direction) {
     const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
+    currentIndex += direction;
 
-    // Calcula o próximo índice
-    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+    }
 
-    // Move o carrossel
-    document.querySelector('.carousel-inner').style.transform = `translateX(-${currentIndex * 33.33}%)`;
+    items.forEach((item, index) => {
+        item.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
 }
+
