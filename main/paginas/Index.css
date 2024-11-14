@@ -1,15 +1,17 @@
+
 /* Carrossel */
 .carousel {
     width: 100%;
     max-width: 800px;
-    margin: 20px auto;
-    position: relative;
+    margin:20px auto;
+    position: relative; 
+    margin-left: 440px;
 }
 
 .carousel-inner {
     display: flex;
     overflow: hidden;
-    width: 100%;
+    width: 130%;
 }
 
 .carousel-item {
@@ -33,11 +35,15 @@
     border: none;
     cursor: pointer;
     font-size: 24px;
-    z-index: 1;
+    z-index: 2;
 }
 
-.carousel .prev { left: 10px; }
-.carousel .next { right: 10px; }
+.carousel .prev { 
+    left: 10px; 
+    }
+.carousel .next { 
+    right: -230px; 
+    }
 
 /* Grade de Produtos */
 .product-grid {
@@ -76,7 +82,7 @@
 }
 
 .btn-cart {
-    background-color: #4CAF50;
+    background-color:#2F3144;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -85,5 +91,5 @@
 }
 
 .btn-cart:hover {
-    background-color: #45a049;
+    background-color: #2395EE;
 }

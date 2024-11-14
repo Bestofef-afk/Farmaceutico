@@ -26,6 +26,7 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+    <link rel="stylesheet" href="carrinho.css">
 </head>
 
 <body>

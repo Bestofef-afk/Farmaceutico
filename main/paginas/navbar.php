@@ -20,12 +20,12 @@
 
     <!-- Links de Navegação -->
     <ul>
-      <li><a href="index.php">Home</a></li>
-      <li><a href="produtos.php?categoria=esteticos">Estéticos</a></li>
-      <li><a href="produtos.php?categoria=medicinais">Medicinais</a></li>
-      <li><a href="sobre.php">Sobre</a></li>
-      <li><a href="contato.php">Contato</a></li>
-      <li><a href="carrinho.php">Ir a o carrinho</a></li>
+      <li><a href="index.php"><button>Home</button></a></li>
+      <li><a href="produtos.php?categoria=esteticos"><button >Estéticos</button></a></li>
+      <li><a href="produtos.php?categoria=medicinais"><button >Medicinais</button></a></li>
+      <li><a href="sobre.php"><button>Sobre</button></a></li>
+      <li><a href="contato.php"><button>Contato</button></a></li>
+      <li><a href="carrinho.php"><button>Ir a o carrinho</button></a></li>
     </ul>
   </div>
 </header>
