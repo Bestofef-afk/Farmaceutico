@@ -32,22 +32,29 @@ if (isset($_POST['add_to_cart'])) {
 </head>
 <body>
 
-    <!-- Carrossel de Promoções -->
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item">
-                <img src="promo1.jpg" alt="Promoção 1">
-            </div>
-            <div class="carousel-item">
-                <img src="promo2.jpg" alt="Promoção 2">
-            </div>
-            <div class="carousel-item">
-                <img src="promo3.jpg" alt="Promoção 3">
-            </div>
+  <!-- Carrossel de Promoções -->
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../imagens/produtos/banner.png" alt="Promoção 1">
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="carousel-item">
+            <img src="../imagens/produtos/banner2.png" alt="Promoção 2">
+        </div>
+        <div class="carousel-item">
+            <img src="promo3.jpg" alt="Promoção 3">
+        </div>
     </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    
+    <!-- Indicadores -->
+    <div class="indicators">
+        <span class="indicator active" onclick="currentSlide(0)"></span>
+        <span class="indicator" onclick="currentSlide(1)"></span>
+        <span class="indicator" onclick="currentSlide(2)"></span>
+    </div>
+</div>
 
     <!-- Grade de Produtos -->
     <?php 
