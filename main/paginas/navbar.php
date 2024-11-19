@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar de Remédios</title>
-  <link rel="stylesheet" href="navbar.css"> 
+  <link rel="stylesheet" href="./css/navbar.css"> 
 </head>
 <body>
 
@@ -21,11 +20,9 @@
     <!-- Links de Navegação -->
     <ul>
       <li><a href="index.php"><button>Home</button></a></li>
-      <li><a href="produtos.php?categoria=esteticos"><button >Estéticos</button></a></li>
-      <li><a href="produtos.php?categoria=medicinais"><button >Medicinais</button></a></li>
       <li><a href="sobre.php"><button>Sobre</button></a></li>
       <li><a href="contato.php"><button>Contato</button></a></li>
-      <li><a href="carrinho.php"><button>Ir a o carrinho</button></a></li>
+      <li><a href="carrinho.php"><button>carrinho</button></a></li>
     </ul>
   </div>
 </header>
