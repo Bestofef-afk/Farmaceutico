@@ -14,16 +14,20 @@ document.addEventListener('keypress', (event) => {
 let currentIndex = 0;
 
 function moveSlide(direction) {
-    currentIndex += direction;
     const items = document.querySelectorAll('.carousel-item');
     const totalItems = items.length;
 
+    // Atualiza o índice conforme a direção
+    currentIndex += direction;
+
+    // Verifica se o índice está fora dos limites e ajusta
     if (currentIndex < 0) {
         currentIndex = totalItems - 1;
     } else if (currentIndex >= totalItems) {
         currentIndex = 0;
     }
 
+    // Atualiza o carrossel visualmente
     updateCarousel();
 }
 
@@ -43,8 +47,12 @@ function updateCarousel() {
     // Adiciona a classe 'active' no item e indicador atuais
     items[currentIndex].classList.add('active');
     indicators[currentIndex].classList.add('active');
+
+    // Ajusta a posição do carrossel (move para o slide correto)
+    items.forEach((item, index) => {
+        item.style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
 }
 
 // Inicializa o carrossel
 updateCarousel();
-
