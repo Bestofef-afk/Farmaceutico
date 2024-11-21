@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once("navbar.php");
-require_once("produtos.php"); // Inclui o arquivo de produtos
+require_once("produtos.php");
+// Inclui o arquivo de produtos
 
 // Adiciona produto ao carrinho
 if (isset($_POST['add_to_cart'])) {
@@ -27,8 +28,8 @@ if (isset($_POST['add_to_cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmácia Online</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 
@@ -83,7 +84,8 @@ if (isset($_POST['add_to_cart'])) {
     
     <script src="script.js"></script>
     <footer>
-        <p>&copy; 2024 Farmácia Online</p>
+    <?php include_once("footer.php"); ?>
     </footer>
+    
 </body>
 </html>

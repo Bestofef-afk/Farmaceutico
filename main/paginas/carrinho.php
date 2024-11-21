@@ -25,8 +25,8 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
-    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="./css/styles.css"> <!-- Link para o CSS -->
+    <link rel="stylesheet" href="./css/carrinho.css">
 </head>
 
 <body>
@@ -74,10 +74,7 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Farmácia Online</p>
-    </footer>
-
+    <?php include('footer.php'); ?>
 </body>
 
 </html>

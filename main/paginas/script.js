@@ -56,3 +56,46 @@ function updateCarousel() {
 
 // Inicializa o carrossel
 updateCarousel();
+
+
+function playMusicAndShowGif() {
+    // Seleciona o elemento de áudio
+    const audio = document.getElementById('footer-music');
+    // Seleciona o contêiner do GIF
+    const gifContainer = document.getElementById('fullscreen-gif');
+
+    // Reproduz a música
+    if (audio) {
+        audio.play().catch(error => {
+            console.error("Erro ao reproduzir o áudio:", error);
+        });
+    }
+
+    // Mostra o GIF
+    if (gifContainer) {
+        gifContainer.classList.add('visible');
+
+        // Bloqueia a interação do usuário enquanto o GIF está sendo exibido
+        document.body.classList.add('blocked');
+
+        // Cria um event listener para capturar todos os eventos de teclado e mouse
+        const blockEvents = function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+        };
+
+        // Adiciona o event listener aos elementos do documento
+        document.addEventListener('keydown', blockEvents);
+        document.addEventListener('mousedown', blockEvents);
+
+        // Remove o GIF após 5 segundos (ou outro tempo desejado)
+        setTimeout(() => {
+            gifContainer.classList.remove('visible');
+            document.body.classList.remove('blocked');
+
+            // Remove o event listener
+            document.removeEventListener('keydown', blockEvents);
+            document.removeEventListener('mousedown', blockEvents);
+        }, 42000);
+    }
+}
