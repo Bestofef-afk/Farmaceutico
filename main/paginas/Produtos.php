@@ -2,12 +2,7 @@
    // Categorias
    $categorias = [
        'Estética' => [
-           ['name' => 'Bolsa de Água Quente', 'price' => '39.90', 'image' => '../imagens/produtos/BolsaDeAguaquente.webp'],
-           ['name' => 'Desodorante Vichy', 'price' => '39.90', 'image' => '../imagens/produtos/desodorantevichy.webp'],
-           ['name' => 'Inalador', 'price' => '39.90', 'image' => '../imagens/produtos/inalador.webp'],
-           ['name' => 'Termômetro Digital', 'price' => '39.90', 'image' => '../imagens/produtos/TermometroDigital.webp'],
-           ['name' => 'Tornozeleira', 'price' => '39.90', 'image' => '../imagens/produtos/tornozeleira.webp'],
-           ['name' => 'Creme de cabelo', 'price' => '39.90', 'image' => '../imagens/produtos/cremedecabelo.webp'],
+           ['name' => 'Leave-in Restaurador', 'price' => '39.90', 'image' => '../imagens/produtos/leaveinRestaurador.webp'],
            ['name' => 'Kit de Shampoo', 'price' => '39.90', 'image' => '../imagens/produtos/kitShampoo.webp'],
            ['name' => 'Lip Tint', 'price' => '39.90', 'image' => '../imagens/produtos/lipTint.webp'],
            ['name' => 'Máscara capilar', 'price' => '39.90', 'image' => '../imagens/produtos/mascaraCapilar.webp'],
@@ -15,10 +10,33 @@
            ['name' => 'Esmalte', 'price' => '39.90', 'image' => '../imagens/produtos/esmalte.webp'],
            ['name' => 'Kit Anti Frizz', 'price' => '39.90', 'image' => '../imagens/produtos/kitAntiFrizz.webp'],
            ['name' => 'Óleo capilar', 'price' => '39.90', 'image' => '../imagens/produtos/oleoCapilar.webp'],
-           ['name' => 'Leave-in Restaurador', 'price' => '39.90', 'image' => '../imagens/produtos/leaveinRestaurador.webp'],
+           ['name' => 'Creme de cabelo', 'price' => '39.90', 'image' => '../imagens/produtos/cremedecabelo.webp'],
            ['name' => 'Shampoo e Condicionador 50ml', 'price' => '39.90', 'image' => '../imagens/produtos/shampooEcondicionador.webp'],
-           ['name' => 'Escova Secadora', 'price' => '39.90', 'image' => '../imagens/produtos/escovaSecadora.webp'],
-
+           ['name' => 'Enxaguante Bucal', 'price' => '39.90', 'image' => '../imagens/produtos/enxaguanteBucal.webp'],
+           ['name' => 'Fio dental', 'price' => '39.90', 'image' => '../imagens/produtos/fioDental.webp'],
+           ['name' => 'Protetor Solar Facial Creme', 'price' => '39.90', 'image' => '../imagens/produtos/protetorSolarFacial.webp'],
+           ['name' => 'Condicionador Eudora', 'price' => '39.90', 'image' => '../imagens/produtos/condicionadorEudora.webp'],
+           ['name' => 'Creme para pentear', 'price' => '39.90', 'image' => '../imagens/produtos/cremeParaPentear.webp'],
+           ['name' => 'Ampola Capilar Pantene', 'price' => '39.90', 'image' => '../imagens/produtos/ampolaCapilar.webp'],
+           ['name' => 'Shampoo Matizador', 'price' => '39.90', 'image' => '../imagens/produtos/shampooMatizador.webp'],
+           ['name' => 'Gelatina Capilar', 'price' => '39.90', 'image' => '../imagens/produtos/gelatinaCapilar.webp'],
+           ['name' => 'Tônico Capilar', 'price' => '39.90', 'image' => '../imagens/produtos/tonicoCapilar.webp'],
+           ['name' => 'Shampoo Antiqueda', 'price' => '39.90', 'image' => '../imagens/produtos/shampooAntiqueda.webp'],
+           ['name' => 'Óleo Finalizador', 'price' => '39.90', 'image' => '../imagens/produtos/oleoFinalizador.webp'],
+           ['name' => 'Creme Clareador', 'price' => '39.90', 'image' => '../imagens/produtos/cremeClareador.webp'],
+           ['name' => 'Creme Multirreparador', 'price' => '39.90', 'image' => '../imagens/produtos/cremeMultirreparador.webp'],
+           ['name' => 'Pó Compacto', 'price' => '39.90', 'image' => '../imagens/produtos/poCompacto.webp'],
+           ['name' => 'Base Líquida Dailus', 'price' => '39.90', 'image' => '../imagens/produtos/baseLiquidaDailus.webp'],
+           ['name' => 'Tinta de Cabelo', 'price' => '39.90', 'image' => '../imagens/produtos/tintaDeCabelo.webp'],
+           ['name' => 'Sérum Facial', 'price' => '39.90', 'image' => '../imagens/produtos/serumFacial.webp'],
+           ['name' => 'Condicionador Pantene', 'price' => '39.90', 'image' => '../imagens/produtos/condicionadorPantene.webp'],
+           ['name' => 'Kit Principia Anti-Acne', 'price' => '39.90', 'image' => '../imagens/produtos/kitAntiAcne.webp'], 
+           ['name' => 'Paleta Multifuncional', 'price' => '39.90', 'image' => '../imagens/produtos/paletaMultifuncional.webp'],
+           ['name' => 'Sérum Reparador Capilar', 'price' => '39.90', 'image' => '../imagens/produtos/serumReparador.webp'],
+           ['name' => 'Corretivo Líquido Ruby Rose', 'price' => '39.90', 'image' => '../imagens/produtos/corretivoLiquido.webp'],
+           ['name' => 'Máscara de Cílios Melu', 'price' => '39.90', 'image' => '../imagens/produtos/mascaraDeCilios.webp'],
+           ['name' => 'Paleta De Sombras', 'price' => '39.90', 'image' => '../imagens/produtos/paletaDeSombras.webp'],
+           ['name' => 'Máscara Esfoliante Para Pés', 'price' => '39.90', 'image' => '../imagens/produtos/mascaraEsfoliante.webp'],
        ],
        
        'Medicinal' => [
@@ -66,7 +84,13 @@
            ['name' => 'Complemento Alimentar', 'price' => '39.90', 'image' => '../imagens/produtos/complementoAlimentar.webp'],
            ['name' => 'Multivitaminico Infantil', 'price' => '39.90', 'image' => '../imagens/produtos/multivitaminicoInfantil.webp'],
            ['name' => 'Suplemento Vitaminico', 'price' => '39.90', 'image' => '../imagens/produtos/suplementoVitaminico.webp'],
-
+           ['name' => 'Creatina', 'price' => '39.90', 'image' => '../imagens/produtos/creatina.webp'],
+           ['name' => 'Whey Protein (morango)', 'price' => '39.90', 'image' => '../imagens/produtos/wheyProtein.webp'],
+           ['name' => 'Proteina em pó', 'price' => '39.90', 'image' => '../imagens/produtos/proteinaEmPo.webp'],
+           ['name' => 'Condres Colágeno', 'price' => '39.90', 'image' => '../imagens/produtos/condresColageno.webp'],
+           ['name' => 'Vitamina B12', 'price' => '39.90', 'image' => '../imagens/produtos/vitaminaB12.webp'],
+           ['name' => 'Colágeno Tipo 2', 'price' => '39.90', 'image' => '../imagens/produtos/colagenoTipo2.webp'],
+           ['name' => 'Ômega 3 VITAFOR', 'price' => '39.90', 'image' => '../imagens/produtos/omega3.webp'],
        ]
    ];
 
