@@ -1,0 +1,99 @@
+/* Estilo da seção do logotipo */
+.footer-logo-section {
+    text-align: center;
+}
+
+.footer-logo {
+    width: 150px; /* Tamanho ajustado para um logotipo profissional */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo-section p {
+    margin: 0;
+    font-size: 14px;
+    color: white; /* Tom mais claro para o texto descritivo */
+}
+
+/* Estilo da navegação no rodapé */
+.footer-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav li {
+    display: inline;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #1ABC9C; /* Efeito hover com tom verde suave */
+}
+
+/* Parte inferior do rodapé */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #34495E;
+    padding-top: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Contêiner do GIF escondido por padrão */
+#fullscreen-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden; /* Escondido inicialmente */
+    opacity: 0; /* Invisível inicialmente */
+    transition: opacity 2s ease, visibility 0.5s ease; /* Transição suave */
+}
+
+/* Faz o GIF preencher a tela inteira */
+#fullscreen-gif img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Preenche sem distorção */
+}
+
+/* Classe para mostrar o GIF */
+#fullscreen-gif.visible {
+    visibility: visible; /* Tornar visível */
+    opacity: 1; /* Totalmente opaco */
+}
+
+/* Estilo para bloquear a interação do usuário */
+.blocked {
+    pointer-events: none;
+    cursor: wait;
+}

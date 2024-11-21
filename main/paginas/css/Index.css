@@ -1,10 +1,9 @@
-
 /* Carrossel */
 .carousel {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
-    position: relative; 
+    position: relative;
     margin-left: 440px;
 }
 
@@ -16,7 +15,7 @@
 
 .carousel-item {
     min-width: 100%;
-   transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .carousel img {
@@ -25,7 +24,8 @@
 }
 
 /* Botões do carrossel */
-.carousel .prev, .carousel .next {
+.carousel .prev,
+.carousel .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -38,14 +38,15 @@
     z-index: 2;
 }
 
-.carousel .prev { 
-    left: 10px; 
-    }
-.carousel .next { 
-    right: -230px; 
-    }
+.carousel .prev {
+    left: 10px;
+}
 
-    /* Indicadores */
+.carousel .next {
+    right: -230px;
+}
+
+/* Indicadores */
 .indicators {
     text-align: center;
     padding-top: 10px;
@@ -102,15 +103,16 @@
 }
 
 .btn-cart {
-    background-color:#2F3144;
+    background-color: #2F3144;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
 }
 
 .btn-cart:hover {
     background-color: #2395EE;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
-

@@ -27,6 +27,13 @@ form {
     margin-bottom: 15px;
 }
 
+h2{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
 label {
     display: block;
     font-weight: bold;
