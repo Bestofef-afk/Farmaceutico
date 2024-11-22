@@ -27,6 +27,7 @@
 .cart-item .item-name {
     font-weight: bold;
     margin: 10px;
+    min-width: 150px;
 }
 
 .cart-item .item-price {
