@@ -132,5 +132,33 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
     color: #2F3144;
-    
+}
+
+/* Estilos para a navegação */
+.cnav ul {
+    list-style-type: none; 
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+    background-color: #2F3144; 
+    margin: 0;
+    gap: 20px; 
+}
+
+.cnav ul li {
+    padding: 10px 20px; 
+}
+
+.cnav ul li a {
+    text-decoration: none; 
+    color: #fff; 
+    font-weight: bold; 
+    padding: 5px 15px; 
+    border-radius: 5px; 
+    display: block; 
+}
+
+
+.cnav ul li a:hover {
+    background-color: #2395EE; 
 }
