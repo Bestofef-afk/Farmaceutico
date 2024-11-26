@@ -37,13 +37,13 @@ if (isset($_POST['add_to_cart'])) {
 <div class="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../imagens/produtos/banner.png" alt="Promoção 1">
+            <img src="../imagens/produtos/banner1.png" alt="Promoção 1">
         </div>
         <div class="carousel-item">
             <img src="../imagens/produtos/banner2.png" alt="Promoção 2">
         </div>
         <div class="carousel-item">
-            <img src="promo3.jpg" alt="Promoção 3">
+            <img src="../imagens/produtos/banner3.png" alt="Promoção 3">
         </div>
     </div>
     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -57,30 +57,45 @@ if (isset($_POST['add_to_cart'])) {
     </div>
 </div>
 
-    <!-- Grade de Produtos -->
-    <?php 
-    // Exibir produtos por categoria
-    foreach ($categorias as $categoria => $produtos) {
-        echo "<h2 class='categoria-title'>$categoria</h2>";
-        echo "<div class='product-grid'>";
-        
-        foreach ($produtos as $product) {
+<?php
+// Exibir a navegação das categorias
+echo '<nav class="cnav"><ul>';
+foreach ($categorias as $categoria => $produtos) {
+    echo '<li><a href="#' . strtolower($categoria) . '">' . $categoria . '</a></li>';
+}
+echo '</ul></nav>';
+
+// Exibir produtos por categoria
+foreach ($categorias as $categoria => $produtos) {
+    // Exibir a seção para cada categoria
+    echo '<section id="' . strtolower($categoria) . '">';
+    echo "<h2 class='categoria-title'>$categoria</h2>";
+    echo "<div class='product-grid'>";
+    
+    // Exibir os produtos dentro da categoria
+    foreach ($produtos as $product) {
         ?>
-            <div class="product-card">
-                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
-                <h2><?php echo $product['name']; ?></h2>
-                <p class="price">R$ <?php echo $product['price']; ?></p>
-                <form method="POST">
-                    <input type="hidden" name="product_name" value="<?php echo $product['name']; ?>">
-                    <input type="hidden" name="product_price" value="<?php echo $product['price']; ?>">
-                    <button type="submit" name="add_to_cart" class="btn-cart">Adicionar ao Carrinho</button>
-                </form>
-            </div>
+        <div class="product-card">
+            <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
+            <h2><?php echo $product['name']; ?></h2>
+            <p class="price">R$ <?php echo $product['price']; ?></p>
+            <form method="POST">
+                <input type="hidden" name="product_name" value="<?php echo $product['name']; ?>">
+                <input type="hidden" name="product_price" value="<?php echo $product['price']; ?>">
+                <button type="submit" name="add_to_cart" class="btn-cart">Adicionar ao Carrinho</button>
+            </form>
+        </div>
         <?php
-        }
-        echo "</div>"; // Fechar div da grade de produtos
     }
-    ?>
+    echo "</div></section>";
+}
+?>
+
+      
+
+ 
+  
+
     
     <script src="script.js"></script>
     <footer>
