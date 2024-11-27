@@ -1,24 +1,18 @@
-
 /* Estilo geral do corpo */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #EAF2EF;
+   
 }
 
 /* Estilo geral do rodapé */
 footer {
-    background-color: #2f3144; /* Fundo profissional, tom escuro */
-    color: white; /* Texto claro */
+    background-color: #2f3144;
+    /* Fundo profissional, tom escuro */
+    color: white;
+    /* Texto claro */
     padding: 30px 20px;
     font-size: 14px;
 }
-
-
-
-
-
-
-
-

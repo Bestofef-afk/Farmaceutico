@@ -1,0 +1,74 @@
+/* Estilos básicos para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh
+  }
+  
+  .payment-registration {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .payment-registration h2 {
+    color: #2395ee;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .payment-method {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .payment-method label {
+    margin: 0 10px;
+    font-size: 1.1em;
+  }
+  
+  .payment-fields {
+    display: none; /* Inicialmente, todos os campos estão escondidos */
+    margin-bottom: 20px;
+  }
+  
+  .payment-fields input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .btn-submit {
+    padding: 10px 20px;
+    background-color: #2395ee;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #2f3144;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
