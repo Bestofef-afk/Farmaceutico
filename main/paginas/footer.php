@@ -23,6 +23,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="sobre.php">Sobre</a></li>
                     <li><a href="contato.php">Contato</a></li>
+                    <li><a href="login.php">Log In</a></li>
                     <li><a href="carrinho.php">Carrinho</a></li>
                 </ul>
             </nav>

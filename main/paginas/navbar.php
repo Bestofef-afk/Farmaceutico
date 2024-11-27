@@ -22,6 +22,7 @@
         <li><a href="index.php"><button>Home</button></a></li>
         <li><a href="sobre.php"><button>Sobre</button></a></li>
         <li><a href="contato.php"><button>Contato</button></a></li>
+        <li><a href="login.php"><button>Log In</button></a></li>
         <li><a href="carrinho.php"><button>carrinho</button></a></li>
       </ul>
     </div>

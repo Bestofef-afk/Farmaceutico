@@ -16,6 +16,16 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     header('Location: index.php'); // Redireciona para a página inicial se o carrinho estiver vazio
     exit();
 }
+
+// Calcula o total do carrinho
+if (isset($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $item) {
+        $total += floatval($item['price']);
+    }
+}
+
+// Armazena o total na sessão
+$_SESSION['total_price'] = $total;
 ?>
 
 <!DOCTYPE html>
@@ -43,17 +53,15 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
                 <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
                     <?php foreach ($_SESSION['cart'] as $index => $item): ?>
                         <div class="cart-item">
-                            <span class="item-name"><?php echo $item['name']; ?></span>
-                            <span class="item-price">R$ <?php echo $item['price']?></span>
-                            
-                            
+                            <span class="item-name"><?php echo htmlspecialchars($item['name']); ?></span>
+                            <span class="item-price">R$ <?php echo number_format($item['price'], 2, ',', '.'); ?></span>
+
                             <!-- Formulário para remover o produto -->
                             <form method="POST" style="display:inline;">
                                 <input type="hidden" name="index" value="<?php echo $index; ?>">
                                 <button type="submit" name="remove" class="btn-remove">Remover</button>
                             </form>
                         </div>
-                        <?php $total +=  intval($item['price']) ?>
                     <?php endforeach; ?>
                 <?php else: ?>
                     <p>Seu carrinho está vazio.</p>
@@ -68,7 +76,9 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
             <!-- Botão de Comprar -->
             <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
                 <div class="cart-actions">
-                    <a href="sucesso.php" class="btn-buy">Comprar</a>
+                    <form method="POST" action="registro_pagamento.php">
+                        <button type="submit" class="btn-buy">Comprar</button>
+                    </form>
                 </div>
             <?php endif; ?>
         </div>
